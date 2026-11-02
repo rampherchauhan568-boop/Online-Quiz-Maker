@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>User Dashboard - Quiz Maker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+
+        <h2>Quiz Maker</h2>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <button onclick="logout()">Logout</button>
+        </div>
+
+    </nav>
+
+    <!-- Dashboard -->
+    <section class="dashboard">
+
+        <h1>My Dashboard</h1>
+
+        <p id="welcomeUser"></p>
+
+        <div class="dashboard-cards">
+
+            <div class="dashboard-card">
+                <h2>Create Quiz</h2>
+                <p>Create your own quiz with questions and options.</p>
+                <button onclick="goToCreateQuiz()">
+                    Create Quiz
+                </button>
+            </div>
+
+            <div class="dashboard-card">
+                <h2>Take Quiz</h2>
+                <p>Test your knowledge by taking quizzes.</p>
+                <button onclick="goToTakeQuiz()">
+                    Take Quiz
+                </button>
+            </div>
+
+            <div class="dashboard-card">
+                <h2>My Scores</h2>
+                <p>View your quiz performance.</p>
+                <button onclick="viewScores()">
+                    View Scores
+                </button>
+            </div>
+
+        </div>
+        <div id="scoresSection" style="display: none">
+            <h2>My Quiz Scores</h2>
+            <div id="scoresList"></div>
+        </div>
+
+    </section>
+
+    <script src="auth.js"></script>
+
+</body>
+</html>

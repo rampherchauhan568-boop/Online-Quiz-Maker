@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Maker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h2>Quiz Maker</h2>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="#" onclick="showCreateQuiz()">Create Quiz</a>
+            <a href="#" onclick="showTakeQuiz()">Take Quiz</a>
+            <span id="userInfo"></span>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section class="home">
+        <!-- <div id="userInfo"></div> -->
+        <div class="home-content">
+
+            <h1>Welcome to Quiz Maker</h1>
+
+            <p>
+                Create your own quizzes, test your knowledge
+                and challenge yourself with fun questions.
+            </p>
+
+            <div class="buttons">
+                <button onclick="showCreateQuiz()">
+                    Create Quiz
+                </button>
+
+                <button onclick="showTakeQuiz()">
+                    Take Quiz
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- Create Quiz Section -->
+<section class="create-quiz" id="createQuiz">
+
+    <h1>Create Your Quiz</h1>
+
+    <div class="quiz-form">
+
+        <label>Quiz Title</label>
+        <input type="text" id="quizTitle"
+        placeholder="Enter quiz title">
+
+        <div id="questionsContainer">
+        <label>Question</label>
+        <input type="text" id="question"
+        placeholder="Enter your question">
+
+        <label>Option 1</label>
+        <input type="text" id="option1"
+        placeholder="Enter option 1">
+
+        <label>Option 2</label>
+        <input type="text" id="option2"
+        placeholder="Enter option 2">
+
+        <label>Option 3</label>
+        <input type="text" id="option3"
+        placeholder="Enter option 3">
+
+        <label>Option 4</label>
+        <input type="text" id="option4"
+        placeholder="Enter option 4">
+
+        <label>Correct Answer</label>
+        <select id="correctAnswer">
+            <option value="">Select correct answer</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+            <option value="4">Option 4</option>
+        </select>
+
+        <button onclick="addQuestion()">
+            Add Question
+        </button>
+        </div>
+        <button onclick="saveQuiz()">
+            Save Quiz
+        </button>
+
+    </div>
+
+</section>
+<!-- Take Quiz Section -->
+<section class="take-quiz" id="takeQuiz">
+
+    <h1>Take a Quiz</h1>
+
+    <p>Select a quiz and test your knowledge!</p>
+
+    <div id="quizList">
+        <!-- Saved quizzes will appear here -->
+    </div>
+
+</section>
+<!-- Quiz Playing Section -->
+<section class="quiz-playing" id="quizPlaying">
+
+    <h1 id="playingQuizTitle"></h1>
+
+    <div class="question-box">
+
+        <h3 id="questionNumber"></h3>
+
+        <p id="playingQuestion"></p>
+
+        <div id="answerOptions"></div>
+
+        <button id="nextButton" onclick="nextQuestion()">
+            Next Question
+        </button>
+
+    </div>
+
+</section>
+
+<!-- Quiz Result Section -->
+<section class="quiz-result" id="quizResult">
+
+    <h1>Quiz Completed!</h1>
+
+    <p id="resultMessage"></p>
+    <div id="correctAnswers"></div>
+
+    <h2>Your Score</h2>
+
+    <h1 id="finalScore"></h1>
+    <p id="percentage"></p>
+    <p id="passFail"></p>
+
+    <button onclick="playAgain()">Play Again</button>
+
+    <button onclick="goHome()">
+        Back to Home
+    </button>
+
+</section>
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+
+</body>
+</html>
