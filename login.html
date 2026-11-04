@@ -6,87 +6,122 @@
 
     <title>Login - Quiz Maker</title>
 
+    <link rel="stylesheet" href="style.css">
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f0f4ff;
+        .auth-page {
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            margin: 0;
+            padding: 20px;
+            background: #0f0a1f;
         }
-
+        
         .login-container {
-            background: white;
-            padding: 30px;
-            width: 320px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px #0002;
-        }
-
-        h2 {
-            text-align: center;
-            color: #333;
-        }
-
-        input {
+            background: #1e1633;
+            padding: 40px 35px;
             width: 100%;
-            padding: 12px;
+            max-width: 380px;
+            border-radius: 18px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.10);
+        }
+
+        .login-container h2 {
+            text-align: center;
+            font-size: 30px;
+            color: #F8FAFC;
+            margin-bottom: 10px;
+        }
+
+        .login-container .subtitle {
+            text-align: center;
+            color: #D1D5DB;
+            margin-bottom: 25px;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 14px;
             margin: 10px 0;
             box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 6px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+            font-size: 15px;
         }
 
-        button {
+        .login-container input:focus {
+            border-color: #a855f7;
+            box-shadow: 0 0 5px #a855f755;
+        }
+
+        .login-container button {
             width: 100%;
-            padding: 12px;
-            background: #4a67e8;
+            padding: 14px;
+             background: linear-gradient(135deg, #7c3aed, #a855f7); 
+            /* background-color: #6366f1; */
             color: white;
             border: none;
-            border-radius: 6px;
+            border-radius: 8px;
             cursor: pointer;
-            margin-top: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 15px;
         }
 
-        button:hover {
-            background: #354fc4;
+        .login-container button:hover {
+            opacity: 0.9;
         }
 
-        p {
+        .login-container p {
             text-align: center;
+            margin-top: 22px;
+            color: #D1D5DB;
         }
 
-        a {
-            color: #4a67e8;
+        .login-container a {
+            color: #c084fc;
             text-decoration: none;
+            font-weight: bold;
+        }
+
+        @media(max-width: 480px) {
+            .login-container {
+                padding: 30px 22px;
+            }
         }
     </style>
 </head>
 
 <body>
-   
-    <div class="login-container">
 
-        <h2>Login</h2>
+    <div class="auth-page">
 
-        <form id="loginForm">
+        <div class="login-container">
 
-            <input type="email" id="loginEmail"
-                placeholder="Enter your email" required>
+            <h2>Welcome Back!</h2>
 
-            <input type="password" id="loginPassword"
-                placeholder="Enter your password" required>
+            <p class="subtitle">Login to your Quiz Maker account</p>
 
-            <button type="submit">Login</button>
+            <form id="loginForm">
 
-        </form>
+                <input type="email" id="loginEmail"
+                    placeholder="Enter your email" required>
 
-        <p>
-            Don't have an account?
-            <a href="register.html">Register</a>
-        </p>
+                <input type="password" id="loginPassword"
+                    placeholder="Enter your password" required>
+
+                <button type="submit">Login</button>
+
+            </form>
+
+            <p>
+                Don't have an account?
+                <a href="register.html">Register</a>
+            </p>
+
+        </div>
 
     </div>
 
