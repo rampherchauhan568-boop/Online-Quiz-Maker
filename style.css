@@ -6,7 +6,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: #f5f3ff;
+    background: #0B1020;
 }
 
 /* Navbar */
@@ -15,7 +15,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px 60px;
-    background: #ffffff;
+    background: #11182B;
 }
 
 .navbar h2 {
@@ -30,7 +30,7 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: #333;
+    color: #CBD5E1;
     font-size: 16px;
 }
 
@@ -50,13 +50,13 @@ body {
 
 .home-content h1 {
     font-size: 48px;
-    color: #4b2ca3;
+    color: #F8FAFC;
     margin-bottom: 20px;
 }
 
 .home-content p {
     font-size: 18px;
-    color: #555;
+    color: #94A3B8;
     line-height: 1.7;
     margin-bottom: 30px;
 }
@@ -72,7 +72,7 @@ body {
     padding: 14px 30px;
     border: none;
     border-radius: 8px;
-    background: #6c3ce9;
+    background: #8B5CF6;
     color: white;
     font-size: 16px;
     cursor: pointer;
@@ -87,12 +87,12 @@ body {
     display: none;
     min-height: 100vh;
     padding: 50px 20px;
-    background: #f5f3ff;
+    background: #0B1020;
     text-align: center;
 }
 
 .create-quiz h1 {
-    color: #4b2ca3;
+    color: #F8FAFC;
     font-size: 35px;
     margin-bottom: 30px;
 }
@@ -101,17 +101,17 @@ body {
     max-width: 600px;
     margin: auto;
     padding: 30px;
-    background: white;
+    background: #273660;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     text-align: left;
 }
 
-.quiz-form label {
+.quiz-form label,select {
     display: block;
     margin-top: 15px;
     margin-bottom: 8px;
-    color: #333;
+    color: #F8FAFC;
     font-weight: bold;
 }
 
@@ -119,9 +119,10 @@ body {
 .quiz-form select {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ccc;
+    border: 1px solid #334155;
     border-radius: 7px;
     font-size: 15px;
+    background-color: #182446;
 }
 
 .quiz-form button {
@@ -144,18 +145,18 @@ body {
     display: none;
     min-height: 100vh;
     padding: 50px 20px;
-    background: #f5f3ff;
+    background: #273660;
     text-align: center;
 }
 
 .take-quiz h1 {
-    color: #4b2ca3;
+    color: #F8FAFC;
     font-size: 35px;
     margin-bottom: 15px;
 }
 
 .take-quiz p {
-    color: #555;
+    color: #94A3B8;
     margin-bottom: 30px;
 }
 
@@ -165,7 +166,8 @@ body {
 }
 
 .quiz-card {
-    background: white;
+    background: #171f35;
+    border: #293550;
     padding: 25px;
     margin-bottom: 20px;
     border-radius: 12px;
@@ -173,17 +175,20 @@ body {
 }
 
 .quiz-card h3 {
-    color: #4b2ca3;
+    color: #f8fafc;
     margin-bottom: 15px;
 }
 
 .quiz-card button {
     padding: 12px 25px;
-    background: #6c3ce9;
+    background: #8B5CF6;
     color: white;
     border: none;
     border-radius: 7px;
     cursor: pointer;
+}
+.quiz-card button:hover{
+    background-color: #7630f1;
 }
 
 /* Quiz Playing Section */
@@ -191,12 +196,12 @@ body {
     display: none;
     min-height: 100vh;
     padding: 50px 20px;
-    background: #f5f3ff;
+    background: #0B1020;
     text-align: center;
 }
 
 .quiz-playing h1 {
-    color: #4b2ca3;
+    color: #F8FAFC;
     margin-bottom: 30px;
 }
 
@@ -204,35 +209,93 @@ body {
     max-width: 650px;
     margin: auto;
     padding: 30px;
-    background: white;
+    background: #171f35;
+    color: #f8FAFC;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
+#questionNumber {
+    color: #A78BFA;
+}
+
 
 #playingQuestion {
     font-size: 22px;
     margin: 25px 0;
+    color: #F8FAFC;
 }
-
-#answerOptions {
+ #answerOptions {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    color: #F8FAFC;
+    background-color: #11182B;
+    /* border: 1px solid #8b5cf6; */
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
+.answer-option{
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid #aaa;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+#answer-option.selected{
+    background-color: #4CAF50;
+    color: white;
+}
+/* #answerOptions .answer-option *{
+    color: #f8FAFC; 
+}*/
 #answerOptions button {
     padding: 14px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    background: white;
+    background: #11182B;
     cursor: pointer;
     font-size: 16px;
 }
-
-#answerOptions button:hover {
-    background: #eee8ff;
+.answer-option:hover{
+    background-color: #8B5CF6;
+    color: white;
 }
+#answerOptions button:hover {
+    background: #39175b;
+}
+/* .answer-option{
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
 
+    background-color: #11182B;
+    color: #f8FAFC;
+
+    border: 1px solid #334155;
+    border-radius: 10px;
+
+    font-size: 16px;
+    cursor:pointer;
+}
+.answer-option:hover{
+    background-color: #202b45;
+    border-color: #8b5cf6;
+}
+.answer-option.selected{
+    background-color: #8B5CF6;
+    color: white;
+    border-color: #A78BFA;
+} */
 #nextButton {
     margin-top: 25px;
     padding: 12px 30px;
@@ -241,6 +304,9 @@ body {
     border: none;
     border-radius: 8px;
     cursor: pointer;
+}
+#nextButton:hover{
+    background-color: #5c32c4;
 }
 /* Quiz Result Section */
 .quiz-result {
@@ -252,7 +318,7 @@ body {
 }
 
 .quiz-result h1 {
-    color: #4b2ca3;
+    color: #F8FAFC;
     margin-bottom: 20px;
 }
 
@@ -296,7 +362,7 @@ body {
 
 .dashboard h1 {
     font-size: 32px;
-    color: #333;
+    color: #F8FAFC;
     margin-bottom: 10px;
 }
 
@@ -315,7 +381,7 @@ body {
 }
 
 .dashboard-card {
-    background: white;
+    background: #29375e;
     width: 250px;
     padding: 25px;
     border-radius: 12px;
@@ -324,14 +390,14 @@ body {
 }
 
 .dashboard-card h2 {
-    color: #4a67e8;
+    color: #F8FAFC;
     padding: 20px;
     font-size: 25px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .dashboard-card p {
-    color: #666;
+    color: #94A3B8;
     line-height: 1.5;
     padding: 5px;
     margin-bottom: 10px;
@@ -339,7 +405,7 @@ body {
 }
 
 .dashboard-card button {
-    background: #4a67e8;
+    background: #8B5CF6;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -349,10 +415,10 @@ body {
 }
 
 .dashboard-card button:hover {
-    background: black;
+    background: #7C3AED;
 }
 .nav-links button{
-    background-color: #6c3ce9;
+    background-color: #7C3AED;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -361,7 +427,7 @@ body {
     cursor: pointer;
 }
 .nav-links button:hover{
-    background-color: black;
+    background-color: #671fe5;
 }
 /* My Scores Section */
 

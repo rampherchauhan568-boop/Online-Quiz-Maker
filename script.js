@@ -139,6 +139,51 @@ function startQuiz(index) {
     showQuestion();
 
 }
+function showQuestion() {
+
+    let question = currentQuiz.questions[currentQuestionIndex];
+
+    document.getElementById("questionNumber").textContent =
+        "Question " + (currentQuestionIndex + 1) +
+        " of " + currentQuiz.questions.length;
+
+    document.getElementById("playingQuestion").textContent =
+        question.question;
+
+    let answerOptions = document.getElementById("answerOptions");
+
+    answerOptions.innerHTML = "";
+
+    selectedAnswer = null;
+
+    if (!question.options || question.options.length === 0) {
+        answerOptions.innerHTML = "Options not available!";
+        return;
+    }
+
+    question.options.forEach(function(option, index) {
+
+        let button = document.createElement("button");
+
+        button.className = "answer-option";
+        button.textContent = option;
+
+        button.onclick = function() {
+            selectAnswer(index + 1, button);
+        };
+
+        answerOptions.appendChild(button);
+
+    });
+
+    let nextButton = document.getElementById("nextButton");
+
+    if (currentQuestionIndex === currentQuiz.questions.length - 1) {
+        nextButton.textContent = "Submit Quiz";
+    } else {
+        nextButton.textContent = "Next Question";
+    }
+}
 function deleteQuiz(index) {
 
     let savedQuizzes = JSON.parse(localStorage.getItem("quizzes")) || [];
@@ -157,52 +202,6 @@ function deleteQuiz(index) {
 
     }
 
-}
-
-function showQuestion() {
-
-    let question = currentQuiz.questions[currentQuestionIndex];
-
-    selectedAnswer = null;
-
-    document.getElementById("questionNumber").textContent =
-        "Question " + (currentQuestionIndex + 1) +
-        " of " + currentQuiz.questions.length;
-
-    document.getElementById("playingQuestion").textContent =
-        question.question;
-
-    let answerOptions = document.getElementById("answerOptions");
-
-    answerOptions.innerHTML = "";
-
-    question.options.forEach(function(option, index) {
-
-        let button = document.createElement("button");
-
-        button.textContent = option;
-
-        button.onclick = function() {
-
-            selectedAnswer = index + 1;
-
-            let buttons = answerOptions.querySelectorAll("button");
-
-            buttons.forEach(function(btn) {
-                btn.style.background = "white";
-            });
-
-            button.style.background = "#d9ccff";
-        };
-
-        answerOptions.appendChild(button);
-
-    });
-
-    document.getElementById("nextButton").textContent =
-        currentQuestionIndex === currentQuiz.questions.length - 1
-        ? "Submit Quiz"
-        : "Next Question";
 }
 
 function nextQuestion() {
@@ -421,4 +420,17 @@ function addQuestion() {
     document.getElementById("option4").value = "";
     document.getElementById("correctAnswer").value = "";
 
+}
+
+function selectAnswer(answer, button) {
+
+    selectedAnswer = answer;
+
+    let buttons = document.querySelectorAll(".answer-option");
+
+    buttons.forEach(function(btn) {
+        btn.classList.remove("selected");
+    });
+
+    button.classList.add("selected");
 }

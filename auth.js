@@ -162,3 +162,45 @@ function viewScores() {
     });
 
 }
+
+// Dashboard Create Quiz
+
+function goToCreateQuiz() {
+
+    let loggedInUser = localStorage.getItem("loggedInUser");
+
+    if (!loggedInUser) {
+        alert("Please login first!");
+        window.location.href = "login.html";
+        return;
+    }
+
+    window.location.href = "index.html?section=createQuiz";
+}
+
+
+// Dashboard Take Quiz
+
+function goToTakeQuiz() {
+
+    window.location.href = "index.html?section=takeQuiz";
+
+}
+
+// Open section from Dashboard
+
+window.addEventListener("load", function() {
+
+    let params = new URLSearchParams(window.location.search);
+
+    let section = params.get("section");
+
+    if (section === "createQuiz") {
+        showCreateQuiz();
+    }
+
+    else if (section === "takeQuiz") {
+        showTakeQuiz();
+    }
+
+});
